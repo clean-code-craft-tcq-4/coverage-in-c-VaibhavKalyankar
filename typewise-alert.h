@@ -25,6 +25,8 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
+#define OK 0
+#define NOT_OK -1
 void checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
