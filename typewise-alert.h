@@ -32,3 +32,4 @@ void checkAndAlert(
 
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
+int SendAlert(BreachType breachtype.AlertTarget alerttarget);
