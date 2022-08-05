@@ -51,7 +51,7 @@ void checkAndAlert(
       break;
   }
 }
-int SendAlert(BreachType breachtype.AlertTarget alerttarget)
+int SendAlert(BreachType breachtype,AlertTarget alerttarget)
 {
   if(alerttarget == TO_CONTROLLER)
   {
