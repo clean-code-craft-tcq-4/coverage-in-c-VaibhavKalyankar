@@ -51,6 +51,21 @@ void checkAndAlert(
       break;
   }
 }
+int SendAlert(BreachType breachtype.AlertTarget alerttarget)
+{
+  if(alerttarget == TO_CONTROLLER)
+  {
+    sendToController(breachtype);
+    return OK;
+  }
+  if(alerttarget == TO_EMAIL)
+  {
+    sendToEmail(breachtype);
+    return OK;
+  }
+  printf("Unknown Alert Target\n");
+  return NOT_OK;
+}
 
 void sendToController(BreachType breachType) {
   const unsigned short header = 0xfeed;
