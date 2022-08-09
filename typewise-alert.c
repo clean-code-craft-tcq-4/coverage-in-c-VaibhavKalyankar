@@ -44,14 +44,7 @@ void checkAndAlert(
     batteryChar.coolingType, temperatureInC
   );
 
-  switch(alertTarget) {
-    case TO_CONTROLLER:
-      sendToController(breachType);
-      break;
-    case TO_EMAIL:
-      sendToEmail(breachType);
-      break;
-  }
+  return SendAlert(breachType,alertTarget);
 }
 int SendAlert(BreachType breachtype,AlertTarget alerttarget)
 {
