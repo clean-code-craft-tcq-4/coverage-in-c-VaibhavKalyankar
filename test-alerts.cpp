@@ -1,5 +1,4 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-
 #include "test/catch.hpp"
 #include "typewise-alert.h"
 
@@ -9,8 +8,6 @@ TEST_CASE("infers the breach according to limits") {
   REQUIRE(inferBreach(40, 20, 30) == TOO_HIGH);
   REQUIRE(inferBreach(45, 25, 40) == TOO_HIGH);
   REQUIRE(inferBreach(22, 20, 23) == NORMAL);
-
-  
 }
 
   TEST_CASE("Classify temprature breach accordingly") 
@@ -26,24 +23,20 @@ TEST_CASE("infers the breach according to limits") {
   REQUIRE(classifyTemperatureBreach(MED_ACTIVE_COOLING, 45) == TOO_HIGH);
   
 }
-
   TEST_CASE("checkAndAlert") 
   {
     BatteryCharacter batteryCharacter;
     batteryCharacter.coolingType = PASSIVE_COOLING;
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter,22) == OK);
     REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 35) == OK);
-   
     batteryCharacter.coolingType = HI_ACTIVE_COOLING;
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 55) == OK);
     REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 40) == OK);
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, -5) == OK);
-    
     batteryCharacter.coolingType = MED_ACTIVE_COOLING;
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 38) == OK);
     REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 30) == OK);
     REQUIRE(checkAndAlert(UNKNOWN_TARGET,batteryCharacter, -10) == NOT_OK);
-    
   }
 
  TEST_CASE("Send Alert") 
