@@ -38,12 +38,12 @@ TEST_CASE("infers the breach according to limits") {
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 55) == OK);
     REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 40) == OK);
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, -5) == OK);
-  /*  
+    
     batteryCharacter.coolingType = MED_ACTIVE_COOLING;
-    REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 45) == OK);
-    REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 45) == NOT_OK);
-    REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 45) == OK);
-    */
+    REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 38) == OK);
+    REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, -10) == NOT_OK);
+    REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 35) == OK);
+    
   }
 /*
  TEST_CASE("Send Alert") 
