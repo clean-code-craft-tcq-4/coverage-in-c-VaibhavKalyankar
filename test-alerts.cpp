@@ -41,8 +41,8 @@ TEST_CASE("infers the breach according to limits") {
     
     batteryCharacter.coolingType = MED_ACTIVE_COOLING;
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 38) == OK);
-    REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, -10) == NOT_OK);
-    REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 35) == OK);
+    REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 30) == OK);
+    REQUIRE(checkAndAlert(UNKNOWN_TARGET,batteryCharacter, -10) == NOT_OK);
     
   }
 /*
