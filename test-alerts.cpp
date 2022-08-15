@@ -33,7 +33,7 @@ TEST_CASE("infers the breach according to limits") {
     batteryCharacter.coolingType = PASSIVE_COOLING;
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter,22) == OK);
     REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 35) == OK);
-   /*
+   
     batteryCharacter.coolingType = HI_ACTIVE_COOLING;
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 45) == OK);
     REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 45) == NOT_OK);
@@ -42,7 +42,7 @@ TEST_CASE("infers the breach according to limits") {
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 45) == OK);
     REQUIRE(checkAndAlert(TO_EMAIL,batteryCharacter, 45) == NOT_OK);
     REQUIRE(checkAndAlert(TO_CONTROLLER,batteryCharacter, 45) == OK);
-    */
+    
   }
 /*
  TEST_CASE("Send Alert") 
