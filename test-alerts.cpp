@@ -48,12 +48,12 @@ TEST_CASE("infers the breach according to limits") {
 
  TEST_CASE("Send Alert") 
  {
-    REQUIRE(SendAlert(TO_CONTROLLER,NORMAL) == OK);
-    REQUIRE(SendAlert(TO_CONTROLLER,TOO_LOW) == OK);
-    REQUIRE(SendAlert(TO_CONTROLLER,TOO_HIGH) == OK);
-    REQUIRE(SendAlert(TO_EMAIL,NORMAL) == OK);
-    REQUIRE(SendAlert(TO_EMAIL,TOO_LOW) == OK);
-    REQUIRE(SendAlert(UNKNOWN_TARGET,TOO_HIGH) == NOT_OK);
+    REQUIRE(SendAlert(NORMAL,TO_CONTROLLER) == OK);
+    REQUIRE(SendAlert(TOO_LOW,TO_CONTROLLER) == OK);
+    REQUIRE(SendAlert(TOO_HIGH,TO_CONTROLLER) == OK);
+    REQUIRE(SendAlert(NORMAL,TO_EMAIL) == OK);
+    REQUIRE(SendAlert(TOO_LOW,TO_EMAIL) == OK);
+    REQUIRE(SendAlert(TOO_HIGH,UNKNOWN_TARGET) == NOT_OK);
  }
   
     
