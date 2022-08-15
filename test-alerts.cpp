@@ -45,7 +45,7 @@ TEST_CASE("infers the breach according to limits") {
     REQUIRE(checkAndAlert(UNKNOWN_TARGET,batteryCharacter, -10) == NOT_OK);
     
   }
-/*
+
  TEST_CASE("Send Alert") 
  {
     REQUIRE(SendAlert(TO_CONTROLLER,NORMAL) == OK);
@@ -55,5 +55,5 @@ TEST_CASE("infers the breach according to limits") {
     REQUIRE(SendAlert(TO_EMAIL,TOO_LOW) == OK);
     REQUIRE(SendAlert(UNKNOWN_TARGET,TOO_HIGH) == NOT_OK);
  }
- */   
+  
     
