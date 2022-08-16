@@ -33,7 +33,7 @@ BreachType classifyTemperatureBreach(
       lowerLimit = 0;
       upperLimit = 40;
     }
-  }
+  
   return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
 
@@ -83,5 +83,5 @@ void sendToEmail(BreachType breachType) {
   {
     // do nothing
   }
-  }
+  
 }
